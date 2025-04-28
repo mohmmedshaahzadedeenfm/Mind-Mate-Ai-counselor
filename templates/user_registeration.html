@@ -1,0 +1,63 @@
+{%include'public_header.html'%}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+    <div class="container position-relative">
+      <div class="row gy-5" data-aos="fade-in">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+          <h2>Register<span> Here</span></h2>
+          <form action="" method="POST" onsubmit="return validateForm()" style="max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+            <label for="Fname" style="display: block; margin-bottom: 5px;">First Name:</label>
+            <input type="text" id="Fname" name="Fname" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+
+            <label for="Lname" style="display: block; margin-bottom: 5px;">Last Name:</label>
+            <input type="text" id="Lname" name="Lname" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+
+            <label for="Place" style="display: block; margin-bottom: 5px;">Place:</label>
+            <input type="text" id="Place" name="Place" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+
+            <label for="Phone" style="display: block; margin-bottom: 5px;">Phone:</label>
+            <input type="text" id="Phone" name="Phone" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+
+            <label for="Email" style="display: block; margin-bottom: 5px;">Email:</label>
+            <input type="email" id="Email" name="Email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+
+            <label for="Username" style="display: block; margin-bottom: 5px;">Username:</label>
+            <input type="text" id="Username" name="Username" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+
+            <label for="Password" style="display: block; margin-bottom: 5px;">Password:</label>
+            <input type="password" id="Password" name="Password" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function validateForm() {
+      const phone = document.getElementById('Phone').value;
+      const email = document.getElementById('Email').value;
+      const password = document.getElementById('Password').value;
+
+      const phoneRegex = /^[0-9]{10}$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!phoneRegex.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return false;
+      }
+
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+{%include'footer.html'%}

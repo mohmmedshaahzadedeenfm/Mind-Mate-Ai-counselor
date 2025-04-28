@@ -1,0 +1,37 @@
+{%include'meditation_header.html'%}
+<br><br><br><br><br><br><br><br>
+<center>
+	<form method="post">
+		<h1>Chat Box</h1>
+		<div style="overflow-y: scroll; width: 500px; height: 400px;">
+			<table class="table" style="width: 100%; border-collapse: separate; border-spacing: 0 10px;">
+				{% for i in data['view'] %}
+					<tr>
+						{% if i['Usertype'] == 'meditation' %}
+							<td align="right">
+								<div style="display: inline-block; background-color: #d3dbdd; color: #00796B; padding: 10px; border-radius: 10px; max-width: 70%;">
+									{{ i['message'] }}
+								</div>
+							</td>
+						{% else %}
+							<td align="left">
+								<div style="display: inline-block; background-color: #F1F8E9; color: #ee4f4f; padding: 10px; border-radius: 10px; max-width: 70%;">
+									{{ i['message'] }}
+								</div>
+							</td>
+						{% endif %}
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+		<table>
+			<tr>
+				<th><input type="text" class="form-control" name="message" required></th>
+				<td><input class="btn btn-outline-info" type="submit" name="submit" value="SEND"></td>
+			</tr>
+		</table>
+	</form>
+	<br><br>
+</center>
+
+{%include'footer.html'%}

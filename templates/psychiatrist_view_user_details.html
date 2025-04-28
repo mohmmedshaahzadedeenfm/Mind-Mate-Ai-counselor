@@ -1,0 +1,79 @@
+{%include'psychiatrist_header.html'%}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+    <div class="container position-relative">
+      <div class="row gy-5" data-aos="fade-in">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+          <h2>User Details</span></h2>
+          <!-- <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p> -->
+          <div class="d-flex justify-content-center justify-content-lg-start">
+<!--             <a href="#about" class="btn-get-started">Get Started</a>
+            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2">
+          <!-- <img src="static/assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100"> -->
+        </div>
+      </div>
+    </div>
+        </div>
+  </section>
+  <!-- End Hero Section -->
+<center>   
+
+
+ <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1>USER Details</h1>
+            </div>
+           
+            <div class="row g-4">
+                {% for i in data['viewuser'] %}
+              <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+               
+                    <div class="service-item bg-light rounded h-100 p-5">
+                      
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-brain text-primary fs-4"></i>
+                        </div>
+                        
+                        <h4 class="mb-3">{{i['Fname']}} {{i['Lname']}}</h4>
+                        <p class="mb-4">PLACE : {{i['Place']}}</p>
+                        <p class="mb-4">PHONE : {{i['Phone']}}</p>
+                        <p class="mb-4">EMAIL : {{i['Email']}}</p>  
+
+                    </div>
+                   
+                </div>  
+                 {% endfor %}             
+            </div>
+          
+        </div>
+    </div>
+     
+    <!-- Service End -->
+
+
+<!-- <h1>User Details</h1>
+<table class="table">
+	<tr>
+		<th>Sl.No</th>
+		<th>Name</th>
+		<th>Place</th>
+		<th>Phone</th>
+		<th>Email</th>
+	</tr>
+	{%  for i in data['viewuser'] %}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{i['Fname']}} {{i['Lname']}}</td>
+		<td>{{i['Place']}}</td>
+		<td>{{i['Phone']}}</td>
+		<td>{{i['Email']}}</td>
+	</tr>
+	{%  endfor %}
+</table> -->
+</center>
+{%include'footer.html'%}
